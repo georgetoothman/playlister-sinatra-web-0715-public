@@ -5,4 +5,14 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-run ApplicationController
+map "/genres" do
+  run GenresController
+end
+
+map "/songs" do
+  run SongsController
+end
+
+map "/artists" do 
+  run ApplicationController
+end
